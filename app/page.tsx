@@ -33,36 +33,41 @@ export default function MainPanelPage() {
         <div className="absolute inset-0 bg-navy-950/40 backdrop-blur-[1px] pointer-events-none" />
 
         <div className="relative z-10 w-full max-w-7xl flex flex-col items-center">
-          {/* Welcome Banner & Quick Search */}
-          <div className="w-full flex flex-col md:flex-row justify-between items-center gap-4 mb-8 bg-white/10 backdrop-blur-md p-4 sm:p-5 rounded-2xl border border-white/20 shadow-2xl">
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="inline-block w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span className="text-cyan-300 text-xs font-semibold tracking-wider uppercase">System Active • High Performance POS</span>
+          {/* Welcome Banner & Quick Search with enhanced vivid colors & contrast */}
+          <div className="w-full flex flex-col lg:flex-row justify-between items-center gap-5 mb-8 bg-[#071d44]/95 backdrop-blur-xl p-5 sm:p-6 rounded-2xl border-2 border-[#00c3ff]/40 shadow-[0_12px_45px_rgba(0,0,0,0.65),0_0_20px_rgba(0,195,255,0.2)]">
+            <div className="text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/50 px-3 py-1 rounded-full mb-2">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
+                </span>
+                <span className="text-emerald-300 text-xs font-bold tracking-wider uppercase">
+                  System Active • High Performance POS
+                </span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-wide mt-1">
-                Udani POS <span className="text-cyan-400 font-light">Management Panel</span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-wide leading-tight drop-shadow-md">
+                Udani POS <span className="text-[#00e5ff] drop-shadow-[0_2px_12px_rgba(0,229,255,0.6)]">Management Panel</span>
               </h2>
-              <p className="text-slate-300 text-xs sm:text-sm mt-0.5">
+              <p className="text-slate-200 text-xs sm:text-sm font-medium mt-1 drop-shadow-sm max-w-xl">
                 Select a module below to manage sales, inventory, customers, and reporting.
               </p>
             </div>
 
             {/* Quick module search & POS shortcut */}
-            <div className="flex items-center gap-3 w-full md:w-auto">
-              <div className="relative w-full md:w-64">
-                <i className="fas fa-search absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+            <div className="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
+              <div className="relative w-full sm:w-64">
+                <i className="fas fa-search absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 text-sm"></i>
                 <input
                   type="text"
                   placeholder="Quick search module..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full bg-white/20 border border-white/30 text-white placeholder-slate-300 rounded-xl pl-9 pr-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:bg-white/30 transition-all"
+                  className="w-full bg-white text-slate-900 placeholder-slate-500 font-semibold rounded-xl pl-9 pr-4 py-2.5 text-sm border-2 border-[#00c3ff]/50 shadow-inner focus:outline-none focus:ring-4 focus:ring-[#00c3ff]/40 focus:border-[#00c3ff] transition-all"
                 />
                 {searchTerm && (
                   <button
                     onClick={() => setSearchTerm("")}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-300 hover:text-white"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 font-bold"
                   >
                     ×
                   </button>
@@ -71,9 +76,9 @@ export default function MainPanelPage() {
 
               <Link
                 href="/pos"
-                className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white px-5 py-2.5 rounded-xl font-bold text-sm shadow-lg shadow-cyan-500/25 flex items-center gap-2 transition-all hover:scale-105 active:scale-95 whitespace-nowrap"
+                className="w-full sm:w-auto bg-gradient-to-r from-[#00d2ff] to-[#008be3] hover:from-[#36dcff] hover:to-[#007cc9] text-[#051739] px-6 py-2.5 rounded-xl font-black text-sm uppercase tracking-wider shadow-[0_0_25px_rgba(0,210,255,0.65)] hover:shadow-[0_0_35px_rgba(0,210,255,0.9)] flex items-center justify-center gap-2.5 transition-all hover:scale-105 active:scale-95 whitespace-nowrap border border-cyan-200"
               >
-                <i className="fas fa-bolt text-amber-300"></i>
+                <i className="fas fa-bolt text-amber-500 text-base"></i>
                 <span>Open POS</span>
               </Link>
             </div>
