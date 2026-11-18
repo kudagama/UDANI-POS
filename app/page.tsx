@@ -19,9 +19,9 @@ export default function MainPanelPage() {
       {/* Top Header */}
       <Header currentTitle="Main Panel" showQuickNav={true} />
 
-      {/* Main Content with original dash-bg.png background */}
+      {/* Main Content with original dash-bg.png background - Perfectly Centered */}
       <main
-        className="flex-grow flex flex-col items-center justify-start py-8 px-4 sm:px-8 relative min-h-[calc(100vh-140px)]"
+        className="flex-grow flex flex-col items-center justify-center py-6 sm:py-10 px-4 sm:px-8 relative min-h-[calc(100vh-140px)] w-full"
         style={{
           backgroundImage: "url('/images/main-panel/dash-bg.png'), radial-gradient(circle at 50% 20%, #173b7d 0%, #061838 100%)",
           backgroundSize: "cover",
@@ -32,7 +32,7 @@ export default function MainPanelPage() {
         {/* Decorative blur elements */}
         <div className="absolute inset-0 bg-navy-950/40 backdrop-blur-[1px] pointer-events-none" />
 
-        <div className="relative z-10 w-full max-w-7xl flex flex-col items-center">
+        <div className="relative z-10 w-full max-w-7xl flex flex-col items-center justify-center my-auto">
           {/* Welcome Banner & Quick Search with enhanced vivid colors & contrast */}
           <div className="w-full flex flex-col lg:flex-row justify-between items-center gap-5 mb-8 bg-[#071d44]/95 backdrop-blur-xl p-5 sm:p-6 rounded-2xl border-2 border-[#00c3ff]/40 shadow-[0_12px_45px_rgba(0,0,0,0.65),0_0_20px_rgba(0,195,255,0.2)]">
             <div className="text-center lg:text-left">

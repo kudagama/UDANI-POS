@@ -39,9 +39,9 @@ export default function Header({ currentTitle, showQuickNav = true }: HeaderProp
   };
 
   return (
-    <header className="nav bg-[#0b2b64] w-full min-h-[90px] px-6 lg:px-14 py-3 flex justify-between items-center shadow-lg z-30 transition-all">
+    <header className="nav bg-[#0b2b64] w-full min-h-[90px] px-6 lg:px-14 py-3 flex justify-between items-center shadow-lg z-30 transition-all relative">
       {/* Left controls */}
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 z-10">
         {/* Back Button */}
         <button
           onClick={() => router.back()}
@@ -61,7 +61,7 @@ export default function Header({ currentTitle, showQuickNav = true }: HeaderProp
         </button>
 
         {showQuickNav && (
-          <div className="hidden md:flex items-center gap-2.5">
+          <div className="hidden lg:flex items-center gap-2.5">
             {/* Go to Main Panel */}
             <Link
               href="/"
@@ -91,17 +91,17 @@ export default function Header({ currentTitle, showQuickNav = true }: HeaderProp
         )}
       </div>
 
-      {/* Center Logo & Brand Name */}
-      <div className="flex items-center gap-3">
+      {/* Dead-Center Brand Logo & Name */}
+      <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center gap-3 z-10 pointer-events-auto">
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-md p-1.5 border border-white/20 flex items-center justify-center group-hover:scale-105 transition-all">
+          <div className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-md p-1.5 border border-white/20 flex items-center justify-center group-hover:scale-105 transition-all shadow-md">
             <i className="fas fa-cubes text-2xl text-cyan-400"></i>
           </div>
           <div className="text-left hidden sm:block">
-            <h1 className="text-white text-xl font-extrabold tracking-wider leading-tight flex items-center gap-1.5">
+            <h1 className="text-white text-xl font-extrabold tracking-wider leading-tight flex items-center gap-1.5 drop-shadow-md">
               UDANI <span className="text-[#00c3ff]">POS</span>
             </h1>
-            <p className="text-cyan-200/80 text-[11px] font-medium tracking-widest uppercase">
+            <p className="text-cyan-200/90 text-[11px] font-medium tracking-widest uppercase">
               Retail & Inventory System
             </p>
           </div>
@@ -109,7 +109,7 @@ export default function Header({ currentTitle, showQuickNav = true }: HeaderProp
       </div>
 
       {/* Right User & Logout info */}
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 z-10">
         <div className="flex flex-col items-end text-right hidden sm:flex">
           <h3 className="text-base lg:text-lg font-bold text-white leading-tight">
             {greeting}
